@@ -651,7 +651,7 @@ function navigations2route(navigations) {
 
 export default function entry({pathPrefix}) {
   // PathPrefix = pathPrefix || DocPathPrefix;
-  const locate = 'examples'; // 暂时不支持切换，因为目前只有中文文档
+  const locate = 'zh-CN'; // 暂时不支持切换，因为目前只有中文文档
   return (
     <Router history={browserHistory}>
       <Route component={App}>
