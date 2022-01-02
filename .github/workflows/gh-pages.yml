@@ -16,23 +16,23 @@ jobs:
     steps:
       - uses: n1hility/cancel-previous-runs@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN_GITHUB }}
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: 使用 Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: build
+          repo-token: ${{ secrets.TOKEN_GITHUB }}
+      - name: 编译
         run: |
-          npm i
-          sh deploy-gh-pages.sh
-      - name: Deploy 🚀
+          npm i --registry=https://registry.npm.taobao.org
+          npm run deploy-gh-page
+      - name: 发布到github page 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: gh-pages # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
