@@ -18,9 +18,9 @@ cp -r mock gh-pages/
 
 sh build.sh
 
-tar -zcvf sdk.tar.gz sdk
+# tar -zcvf sdk.tar.gz sdk
 
-mv sdk.tar.gz gh-pages/
+# mv sdk.tar.gz gh-pages/
 
 # 加这个 github page 就不会忽略下划线开头的文件
 touch gh-pages/.nojekyll
