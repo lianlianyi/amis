@@ -268,37 +268,6 @@ export class App extends React.PureComponent<{
             </Button>
           )}
 
-          <ul className={`HeaderLinks`}>
-            <Link to={`${ContextPath}/zh-CN/docs`} activeClassName="is-active">
-              文档
-            </Link>
-
-            <Link
-              to={`${ContextPath}/zh-CN/components`}
-              activeClassName="is-active"
-            >
-              组件
-            </Link>
-            <Link to={`${ContextPath}/zh-CN/style`} activeClassName="is-active">
-              样式
-            </Link>
-            <Link
-              to={`${ContextPath}/examples/index`}
-              activeClassName="is-active"
-            >
-              示例
-            </Link>
-            <a
-              href="https://github.com/fex-team/amis-editor-demo"
-              target="_blank"
-            >
-              编辑器
-            </a>
-            {/* <a href="https://suda.bce.baidu.com" target="_blank">
-              爱速搭
-            </a> */}
-          </ul>
-
           <div className="hidden-xs ml-auto">
             <Select
               overlayPlacement="right-bottom-right-top"
@@ -566,7 +535,7 @@ export class App extends React.PureComponent<{
           })}
         </>
       );
-    } else if (/examples/.test(location.pathname)) {
+    } else if (/.test(location.pathname)) {
       return this.renderExamples();
     }
 
@@ -682,7 +651,7 @@ function navigations2route(navigations) {
 
 export default function entry({pathPrefix}) {
   // PathPrefix = pathPrefix || DocPathPrefix;
-  const locate = 'zh-CN'; // 暂时不支持切换，因为目前只有中文文档
+  const locate = 'examples'; // 暂时不支持切换，因为目前只有中文文档
   return (
     <Router history={browserHistory}>
       <Route component={App}>
