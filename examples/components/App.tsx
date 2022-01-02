@@ -535,7 +535,7 @@ export class App extends React.PureComponent<{
           })}
         </>
       );
-    } else if (/.test(location.pathname)) {
+    } else if (/examples/.test(location.pathname)) {
       return this.renderExamples();
     }
 
